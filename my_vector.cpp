@@ -54,8 +54,16 @@ public:
           v_size++;
      }
 
+     int front(){
+          if(v_size) return object[0];
+     }
+
      int back(){
           if(v_size) return object[v_size-1];
+     }
+
+     int max_size(){
+          return v_msize;
      }
 
      void pop_back(){
@@ -65,12 +73,29 @@ public:
 
 int main(){
      my_vector<int> test;
+     /*
+          測試push_back，擴張，size
+     */
      for(int i = 0 ; i < 6 ; i++){
           test.push_back(i);
           cout << "now number: " << i << " now size : " << test.size() << endl;
      }
+     /*
+          測試back和pop_back
+     */
      cout << "now last num: " << test.back() << endl;
      test.pop_back();
      cout << "after pop_back now last num: " << test.back() << endl;
+
+     /*
+          測試front
+     */
+    cout << "front : " << test.front() << endl;
+
+     /*
+          當前最大容量
+     */
+    cout << "max size : " << test.max_size() << endl;
+
      return 0;
 }
