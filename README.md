@@ -5,3 +5,5 @@
      back
      size
      pop_back
+     max_size
+     front
